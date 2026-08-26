@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QUIMERA C3 EN LA INTERPRETACIÓN MÉDICA. &bull; Serie 01</title>
+    <meta name="description" content="Quimera en la Interpretación Médica — Formación, certificación, simulación, ética e investigación en comunicación clínica.">
+    <title>Quimera — Interpretación Médica</title>
     <style>
         :root {
             --bg-color: #f8fafc;
@@ -12,9 +13,14 @@
             --text-muted: #475569;
             --primary: #0f766e;
             --primary-hover: #115e59;
+            --accent: #d97706;
             --border-color: #e2e8f0;
             --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
             --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         * {
@@ -30,221 +36,277 @@
             line-height: 1.6;
         }
 
+        /* NAVEGACIÓN SUPERIOR */
+        .top-bar {
+            background-color: #0b1329;
+            padding: 0.85rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .top-bar-container {
+            max-width: 1150px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand-logo {
+            color: #ffffff;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-decoration: none;
+            letter-spacing: -0.01em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.25rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #e2e8f0;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: #38bdf8;
+        }
+
+        /* ENCABEZADO CON IMAGEN DE FONDO */
         header {
-            /* Capas de transparencia para mantener clara la imagen */
-            background: linear-gradient(rgba(15, 23, 42, 0.40), rgba(15, 23, 42, 0.50)), url('banner.jpeg');
+            /* Reemplazar 'interpretacion-medica.jpg' por la ruta de tu imagen */
+            background: linear-gradient(rgba(15, 23, 42, 0.70), rgba(15, 23, 42, 0.80)), url('Quimera.jpg');
             background-size: cover;
             background-position: center;
             color: #ffffff;
-            padding: 5rem 2rem 4rem 2rem;
-            text-align: center;
+            padding: 5rem 3rem;
+            text-align: right;
             border-bottom: 4px solid var(--primary);
         }
 
         header h1 {
             font-family: Georgia, "Times New Roman", serif;
-            font-size: 2.3rem;
+            font-size: 2.6rem;
             font-weight: 700;
             letter-spacing: -0.02em;
-            margin-bottom: 0.5rem;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            margin-bottom: 0.75rem;
+            text-shadow: 0 3px 6px rgba(0, 0, 0, 0.7);
         }
 
-        header h1:last-of-type {
-            margin-bottom: 1rem;
-        }
-
-        /* -------------------------------------------------- */
-        /* SUBTÍTULO CON NEGRITAS Y COLOR BLANCO            */
-        /* -------------------------------------------------- */
-        header p {
-            font-size: 1.15rem;
+        header h1 a {
             color: #ffffff;
-            font-weight: 600;
-            max-width: 750px;
-            margin: 0 auto;
-            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+            text-decoration: none;
+            transition: color 0.2s ease;
         }
 
+        header h1 a:hover {
+            color: #38bdf8;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: #ffffff;
+            font-weight: 500;
+            max-width: 850px;
+            margin-left: auto;
+            margin-right: 0;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .header-tag {
+            display: inline-block;
+            background-color: var(--primary);
+            color: #ffffff;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 0.35rem 1.2rem;
+            border-radius: 9999px;
+            margin-bottom: 1.25rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        /* CONTENEDOR PRINCIPAL */
         .container {
-            max-width: 1100px;
+            max-width: 1150px;
             margin: 0 auto;
-            padding: 3rem 1.5rem;
+            padding: 3.5rem 1.5rem;
         }
 
         .section-title {
             font-family: Georgia, "Times New Roman", serif;
-            font-size: 1.75rem;
+            font-size: 1.85rem;
             color: var(--text-main);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.75rem;
             padding-bottom: 0.5rem;
             border-bottom: 2px solid var(--border-color);
         }
 
-        .grid {
+        /* GRID DE MÓDULOS DE INTERPRETACIONAL */
+        .modules-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 1.75rem;
-            margin-bottom: 3.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 4rem;
         }
 
-        .card {
+        .module-card {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 12px;
             padding: 1.75rem;
             box-shadow: var(--shadow);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            transition: transform 0.2s ease, border-color 0.2s ease;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
 
-        .card:hover {
+        .module-card:hover {
             transform: translateY(-3px);
-            box-shadow: var(--shadow-lg);
+            border-color: var(--primary);
         }
 
-        .badge {
-            display: inline-block;
-            padding: 0.25rem 0.75rem;
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            border-radius: 9999px;
-            margin-bottom: 0.75rem;
-        }
-
-        .badge-active {
-            background-color: #dcfce7;
-            color: #166534;
-        }
-
-        .badge-upcoming {
-            background-color: #fef3c7;
-            color: #92400e;
-        }
-
-        .card-title {
+        .module-card h3 {
             font-family: Georgia, "Times New Roman", serif;
             font-size: 1.35rem;
-            color: var(--text-main);
             margin-bottom: 0.5rem;
         }
 
-        .card-description {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 1.5rem;
-            flex-grow: 1;
-        }
-
-        .btn {
-            display: inline-block;
-            text-align: center;
-            background-color: var(--primary);
-            color: #ffffff;
+        .module-card h3 a {
+            color: var(--primary);
             text-decoration: none;
-            padding: 0.75rem 1.25rem;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: background-color 0.2s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: color 0.2s ease;
         }
 
-        .btn:hover {
-            background-color: var(--primary-hover);
+        .module-card h3 a:hover {
+            color: var(--primary-hover);
         }
 
-        .btn-disabled {
-            background-color: #e2e8f0;
-            color: #94a3b8;
-            cursor: not-allowed;
-        }
-
-        .about-section {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: var(--shadow);
-        }
-
-        .about-section h2 {
-            font-family: Georgia, "Times New Roman", serif;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .about-section p {
+        .module-card p {
             color: var(--text-muted);
-            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            margin-top: 0.5rem;
+            line-height: 1.5;
         }
 
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            header {
+                padding: 3.5rem 1.5rem;
+            }
+            header h1 {
+                font-size: 2rem;
+            }
+            header p {
+                font-size: 1.05rem;
+            }
+            .top-bar-container {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+
+        /* PIE DE PÁGINA (TEXTO BLANCO) */
         footer {
             text-align: center;
-            padding: 2rem;
+            padding: 2.5rem 2rem;
             background-color: #0f172a;
             color: #ffffff;
             font-size: 0.875rem;
-            margin-top: 3rem;
+            margin-top: 4rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        footer p {
+            color: #ffffff;
         }
     </style>
 </head>
 <body>
 
+    <!-- Navegación Superior -->
+    <nav class="top-bar">
+        <div class="top-bar-container">
+            <a href="https://quimerac3.github.io/" class="brand-logo">Quimera</a>
+            <ul class="nav-links">
+                <li><a href="#modulos">Áreas de Especialización</a></li>
+                <li><a href="https://quimerac3.github.io/">Inicio General</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Encabezado Principal con Imagen de Fondo -->
     <header>
-        <h1>QUIMERA C3 EN LA INTERPRETACIÓN MÉDICA.</h1>
-        <h1>Serie 01: Filosofía Aplicada a la Interpretación Médica.</h1>
-        <p>Compendio filosófico de publicaciones, análisis conceptuales y metodología de la investigación en la interpretación médica.</p>
+        <span class="header-tag">&bull; INSTITUTO &bull;</span>
+        <h1><a href="index.html">QUIMERA EN LA INTERPRETACIÓN MÉDICA</a></h1>
+        <p>Especialización rigurosa, mediación lingüística de alta precisión y transferencia del conocimiento en entornos clínicos y biomédicos.</p>
     </header>
 
     <main class="container">
-        
-        <h2 class="section-title">Catálogo de Volúmenes.</h2>
 
-        <div class="grid">
-            
-            <!-- Vol. XI: Bioética. (Publicado) -->
-            <article class="card">
-                <div>
-                    <span class="badge badge-active">Disponible</span>
-                    <h3 class="card-title">Volumen XI: Bioética.</h3>
-                    <p class="card-description">
-                        Edición dedicada al análisis metodológico, bibliográfico y documental en bioética e interpretación médica.
-                    </p>
-                </div>
-                <a href="https://quimerac3.github.io/Serie_Filosofia_Interpretacion_Medica_-_Vol._XI_Bioetica/" class="btn">
-                    Acceder al Volumen XI &rarr;
-                </a>
-            </article>
+        <!-- Sección Principal de Contenidos -->
+        <section id="modulos">
+            <h2 class="section-title">Estructura y Programas</h2>
+            <div class="modules-grid">
 
-            <!-- Próximo volumen -->
-            <article class="card">
-                <div>
-                    <span class="badge badge-upcoming">En preparación</span>
-                    <h3 class="card-title">Volumen XII.</h3>
-                    <p class="card-description">
-                        Próxima publicación de la serie. Próximamente disponible en esta misma plataforma.
-                    </p>
-                </div>
-                <span class="btn btn-disabled">Próximamente</span>
-            </article>
+                <article class="module-card">
+                    <h3><a href="formacion.html">Formación <span>&rarr;</span></a></h3>
+                    <p>Programas académicos de desarrollo profesional especializado en interpretación médica y mediación en salud.</p>
+                </article>
 
-        </div>
+                <article class="module-card">
+                    <h3><a href="series-pedagogicas.html">Series pedagógicas <span>&rarr;</span></a></h3>
+                    <p>Recursos educativos secuenciales y módulos instructivos estructurados para la práctica interpretativa.</p>
+                </article>
 
-        <section class="about-section">
-            <h2>Acerca de la Serie:</h2>
-            <p>
-                La <strong>Serie: Filosofía Aplicada a la Interpretación Médica</strong> agrupa trabajos analíticos, normativos y epistemológicos orientados a la praxis de la interpretación médica moderna. Cada volumen cuenta con estructura independiente de verificación, control de integridad de archivos y referencias documentales.
-            </p>
+                <article class="module-card">
+                    <h3><a href="certificacion.html">Certificación <span>&rarr;</span></a></h3>
+                    <p>Evaluación de competencias, acreditación técnica y estándares de desempeño para intérpretes médicos.</p>
+                </article>
+
+                <article class="module-card">
+                    <h3><a href="simulacion.html">Simulación <span>&rarr;</span></a></h3>
+                    <p>Entornos de práctica clínica simulada y escenarios de inmersión para el entrenamiento de habilidades dinámicas.</p>
+                </article>
+
+                <article class="module-card">
+                    <h3><a href="etica.html">Ética <span>&rarr;</span></a></h3>
+                    <p>Marcos deontológicos, toma de decisiones éticas y principios de confidencialidad en la atención en salud.</p>
+                </article>
+
+                <article class="module-card">
+                    <h3><a href="comunicacion-clinica.html">Comunicación clínica <span>&rarr;</span></a></h3>
+                    <p>Estrategias interpersonales, manejo de terminología técnica y facilitación del diálogo médico-paciente.</p>
+                </article>
+
+                <article class="module-card">
+                    <h3><a href="investigacion.html">Investigación <span>&rarr;</span></a></h3>
+                    <p>Estudios aplicados, análisis traslacional y desarrollo metodológico en la ciencia de la interpretación.</p>
+                </article>
+
+            </div>
         </section>
 
     </main>
 
+    <!-- Pie de Página Visible en Letra Blanca -->
     <footer>
-        <p>&copy; Serie Filosofía Aplicada a la Interpretación Médica &bull; &copy; 2026 Dr.C. Cesar Cerezo Camacho. Todos los derechos reservados.</p>
+        <p>&copy; 2026 Quimera &bull; Instituto de Investigación, Docencia, Servicio y Difusión.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.8rem; color: #ffffff;">Dr.C. Cesar Cerezo Camacho. Todos los derechos reservados.</p>
     </footer>
 
 </body>
