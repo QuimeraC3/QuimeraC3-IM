@@ -210,7 +210,7 @@
             }
         }
 
-        /* PIE DE PÁGINA (TEXTO BLANCO) */
+        /* PIE DE PÁGINA */
         footer {
             text-align: center;
             padding: 2.5rem 2rem;
@@ -291,11 +291,20 @@
 
     </main>
 
-    <!-- Pie de Página Visible en Letra Blanca -->
+    <!-- Pie de Página Actualizado -->
     <footer>
-        <p>&copy; 2026 Instituto Quimera &bull; Centro de Investigación, Docencia, Servicio y Difusión.</p>
-        <p style="margin-top: 0.5rem; font-size: 0.8rem; color: #ffffff;">Dr.C. Cesar Cerezo Camacho. Todos los derechos reservados.</p>
+        <p id="footer-p">&bull; &copy; 2026 Instituto Quimera. &bull; Centro de Investigación, Docencia, Servicio y Difusión. &bull; Dr.C. Cesar Cerezo Camacho. &bull; Todos los derechos reservados. &bull;</p>
     </footer>
+
+    <script>
+        // Script de autocorrección dinámica del año actual en el footer
+        document.addEventListener('DOMContentLoaded', () => {
+            const footerP = document.getElementById('footer-p');
+            if (footerP) {
+                footerP.innerHTML = footerP.innerHTML.replace('2026', new Date().getFullYear());
+            }
+        });
+    </script>
 
 </body>
 </html>
